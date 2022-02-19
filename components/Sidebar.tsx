@@ -32,6 +32,23 @@ const Sidebar: NextPage = () => {
                     <p>Your Episodes</p>
                 </button>
                 <hr className='border-t-[0.1px] border-gray-900'/>
+
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
+                <p className='cursor-pointer hover:text-white'>Playlist name...</p>
             </div>
         </div>
     )
