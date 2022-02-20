@@ -2,6 +2,9 @@ import {NextPage} from "next";
 import {ChevronDownIcon} from "@heroicons/react/outline";
 import {useEffect, useState} from "react";
 import { shuffle } from "lodash";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {playListIdState, playlistState} from "../atom/playListAtom";
+import useSpotify from "../hooks/useSpotify";
 
 const colors = [
     "from-indigo-500",
@@ -15,9 +18,17 @@ const colors = [
 
 const Center: NextPage = () => {
     const [color, setColor] = useState(null);
+    const spotifyApi = useSpotify();
+    const playlistID = useRecoilValue(playListIdState);
+    const [playlist, setPlaylist] = useRecoilState(playlistState);
     useEffect(() => {
         setColor(shuffle(colors).pop());
-    }, []);
+    }, [playlistID]);
+    useEffect(() => {
+        spotifyApi.getPlaylist(playlistID).then((data) => {
+            setPlaylist(data.body);
+        }).catch((error) => console.log('Something went wrong!!!', error));
+    }, [spotifyApi, playlistID]);
     return (
         <div className='flex-grow'>
             <header className='absolute top-5 right-8'>
@@ -35,6 +46,11 @@ const Center: NextPage = () => {
             <section className={`flex items-end space-x-7 
             bg-gradient-to-b to-black ${color}
             h-80 text-white padding-8`}>
+                <img className='h-44 w-44 shadow-2xl' src="https://miro.medium.com/max/642/1*SL_d04G5O9z5-BZqTt2Bhw.png" alt=""/>
+                <div>
+                    <p>PLAYLIST</p>
+                    <h1 className='text-2xl md:text-3xl xl:text-5xl font-bold'>Music for Coding/Focus</h1>
+                </div>
             </section>
         </div>
     )
