@@ -3,8 +3,10 @@ import {useRecoilValue} from "recoil";
 import {playlistState} from "../atom/playListAtom";
 import {songs} from "../data";
 import Player from "@madzadev/audio-player";
+import "@madzadev/audio-player/dist/index.css";
 
 const Songs: NextPage = () => {
+    const playlist = useRecoilValue(playlistState);
     const tracks = [
         {
             url: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
@@ -22,19 +24,18 @@ const Songs: NextPage = () => {
             tags: ["dubstep"],
         },
     ];
-    const playlist = useRecoilValue(playlistState);
     return (
         <div className='text-white'>
-            {/*<Player*/}
-            {/*    trackList={tracks}*/}
-            {/*    includeTags={true}*/}
-            {/*    includeSearch={true}*/}
-            {/*    showPlaylist={true}*/}
-            {/*    autoPlayNextTrack={true}*/}
-            {/*/>*/}
-            {/*{songs.map((song) => (*/}
-            {/*    <p>{song.titleMusic}</p>*/}
-            {/*))}*/}
+            <Player
+                trackList={tracks}
+                includeTags={true}
+                includeSearch={true}
+                showPlaylist={true}
+                autoPlayNextTrack={true}
+            />
+            {songs.map((song) => (
+                <p>{song.titleMusic}</p>
+            ))}
         </div>
     )
 }
