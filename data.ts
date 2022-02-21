@@ -55,4 +55,26 @@ export const playlistList = [
         id: 14,
         title: "Watermelon Sugar Radio"
     },
-]
+];
+
+export const songs = [
+    {
+        titleMusic: "Sancta Mea",
+        src: "https://deezer.page.link/R5J4ZufEJznHP4s49"
+    },
+    {
+        titleMusic: "Divergence"
+    },
+    {
+        titleMusic: "Thoughts"
+    },
+    {
+        titleMusic: "Beyond Beliefs"
+    },
+    {
+        titleMusic: "Los Santos City Map"
+    },
+    {
+        titleMusic: "Lost In Thought"
+    }
+];
